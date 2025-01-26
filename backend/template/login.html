@@ -1,35 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Login</h1>
-    <form id="loginForm">
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      
-      <button type="submit">Login</button>
-    </form>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Login</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='styles.css') }}"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required />
 
-    <div class="google-login">
-      <button onclick="googleLogin()">Login with Google</button>
-    </div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required />
 
-    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
-  </div>
+                <button type="submit">Login</button>
+            </form>
 
-  <script>
-    async function googleLogin() {
-      alert('Google login functionality can be implemented using OAuth.');
-    }
-  </script>
-</body>
+            <div class="google-login">
+                <button onclick="googleLogin()">Login with Google</button>
+            </div>
+
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+
+        <script>
+            async function googleLogin() {
+                alert(
+                    "Google login functionality can be implemented using OAuth.",
+                );
+            }
+        </script>
+    </body>
 </html>

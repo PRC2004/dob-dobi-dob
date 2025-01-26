@@ -12,12 +12,22 @@ import threading
 # from phi.tools.yfinance import YFinanceTools  # Replace with actual library import
 
 # Initialize the Flask app
-app = Flask(__name__)
+app = Flask(__name__, template_folder="template", static_folder='static')
 load_dotenv() # Load Environment variables
 
 @app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/learn")
+def learn():
+    return render_template("learn.html")
+
+@app.route("/login")
+def login():
+    return render_template("login.html")
+
+
 
 
 # Initialize the Finance Agent

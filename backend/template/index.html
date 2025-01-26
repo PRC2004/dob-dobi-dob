@@ -1,58 +1,126 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assests/logo.png" />
-    <title>InvestIQ</title>
-    <link rel="stylesheet" href="main.css">
-</head>
-<body>
-    <header>
-        <div class="left">
-            <div class="logo">
-                <a href="index.html"><img src="./assests/logo.png" alt="InvestIQ Logo"></a>
-                <h3>InvestIQ</h3>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" href="../static/assest/logo.png" />
+        <title>InvestIQ</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='main.css') }}"
+        />
+    </head>
+    <body>
+        <header>
+            <div class="left">
+                <div class="logo">
+                    <a href="index.html"
+                        ><img
+                            src="../static/assest/logo.png"
+                            alt="InvestIQ Logo"
+                    /></a>
+                    <h3>InvestIQ</h3>
+                </div>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="learn.html">Learn</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="hero">
+            <h1>InvestIQ</h1>
+            <p>Invest Smarter</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="learn.html">Learn</a></li>
-                <li><a href="#">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="hero">
-        <h1>InvestIQ</h1>
-        <p>Invest Smarter</p>
-    </div>
-    <main>
-        <div class="container">
-            <section class="features">
-                <div class="feature" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assests/SFP.jpg);">
-                    <h2>Stock Future Prediction</h2>
-                    <p>
-                        Stock future predictions use advanced AI technology to estimate how the price of a stock might change in the coming days, weeks, or months. By analyzing large amounts of data like past stock trends, market news, and financial reports, the AI creates a forecast of a stock’s performance. For example, if a company is expected to release a successful product, the AI may predict its stock value to rise. While these predictions are not guarantees, they provide a helpful guide for making smarter investment decisions. This feature helps both beginners and experienced investors plan their next moves confidently.
-                    </p>
-                </div>
-                <div class="feature" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assests/SGS.jpg);">
-                    <h2>Stock Score Guide</h2>
-                    <p>
-                        The Stock Score Guide uses AI to evaluate a stock’s current performance by analyzing market trends, news, and its price changes. The AI gives the stock a score, usually on a scale (e.g., 1 to 10), to help you decide what to do. A high score means the stock is performing well and could be a good time to buy, while a low score might suggest selling or avoiding it. This score acts like a report card for the stock, helping you make quicker, informed decisions without needing to dig through complicated financial data yourself.
-                    </p>
-                </div>
-                <div class="feature" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./assests/PO.jpg);">
-                    <h2>Portfolio Overview</h2>
-                    <p>
-                        The Portfolio Overview feature shows all your investments in one place, giving you a clear picture of your financial position. It lists the stocks you own, their current values, how much profit or loss you’ve made, and your total portfolio worth. Think of it as a dashboard that keeps track of your money so you don’t have to calculate everything yourself. This feature helps you understand how your investments are performing and whether you need to make changes, like selling underperforming stocks or investing more in profitable ones. It’s simple, organized, and perfect for staying on top of your finances.
-                    </p>
-                </div>
-            </section>
-        </div>
-    </main>
+        <main>
+            <div class="container">
+                <section class="features">
+                    <div
+                        class="feature"
+                        style="
+                            background-image: linear-gradient(
+                                    rgba(0, 0, 0, 0.5),
+                                    rgba(0, 0, 0, 0.5)
+                                ),
+                                url(../static/assest/SFP.jpg);
+                        "
+                    >
+                        <h2>Stock Future Prediction</h2>
+                        <p>
+                            Stock future predictions use advanced AI technology
+                            to estimate how the price of a stock might change in
+                            the coming days, weeks, or months. By analyzing
+                            large amounts of data like past stock trends, market
+                            news, and financial reports, the AI creates a
+                            forecast of a stock’s performance. For example, if a
+                            company is expected to release a successful product,
+                            the AI may predict its stock value to rise. While
+                            these predictions are not guarantees, they provide a
+                            helpful guide for making smarter investment
+                            decisions. This feature helps both beginners and
+                            experienced investors plan their next moves
+                            confidently.
+                        </p>
+                    </div>
+                    <div
+                        class="feature"
+                        style="
+                            background-image: linear-gradient(
+                                    rgba(0, 0, 0, 0.5),
+                                    rgba(0, 0, 0, 0.5)
+                                ),
+                                url(../static/assest/SGS.jpg);
+                        "
+                    >
+                        <h2>Stock Score Guide</h2>
+                        <p>
+                            The Stock Score Guide uses AI to evaluate a stock’s
+                            current performance by analyzing market trends,
+                            news, and its price changes. The AI gives the stock
+                            a score, usually on a scale (e.g., 1 to 10), to help
+                            you decide what to do. A high score means the stock
+                            is performing well and could be a good time to buy,
+                            while a low score might suggest selling or avoiding
+                            it. This score acts like a report card for the
+                            stock, helping you make quicker, informed decisions
+                            without needing to dig through complicated financial
+                            data yourself.
+                        </p>
+                    </div>
+                    <div
+                        class="feature"
+                        style="
+                            background-image: linear-gradient(
+                                    rgba(0, 0, 0, 0.5),
+                                    rgba(0, 0, 0, 0.5)
+                                ),
+                                url(../static/assest/PO.jpg);
+                        "
+                    >
+                        <h2>Portfolio Overview</h2>
+                        <p>
+                            The Portfolio Overview feature shows all your
+                            investments in one place, giving you a clear picture
+                            of your financial position. It lists the stocks you
+                            own, their current values, how much profit or loss
+                            you’ve made, and your total portfolio worth. Think
+                            of it as a dashboard that keeps track of your money
+                            so you don’t have to calculate everything yourself.
+                            This feature helps you understand how your
+                            investments are performing and whether you need to
+                            make changes, like selling underperforming stocks or
+                            investing more in profitable ones. It’s simple,
+                            organized, and perfect for staying on top of your
+                            finances.
+                        </p>
+                    </div>
+                </section>
+            </div>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 InvestIQ. All rights reserved.</p>
-    </footer>
-</body>
+        <footer>
+            <p>&copy; 2025 InvestIQ. All rights reserved.</p>
+        </footer>
+    </body>
 </html>
