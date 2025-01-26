@@ -55,7 +55,7 @@ async def fetch_all_stock_details():
     tasks = [fetch_stock_details(symbol) for symbol in stock_symbols]
     results = await asyncio.gather(*tasks)
     stock_data.extend(results)
-    # print(results)
+    print(results)
     #
         # print(
         #     f"\nSymbol: {item['symbol']}\nPrice: {item['price']}\nDescription: {item['description']}"

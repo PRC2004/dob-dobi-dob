@@ -29,6 +29,10 @@ def learn():
 def login():
     return render_template("login.html")
 
+# @app.route("/stock")
+# def stock():
+#     return render_template("", stock='')
+
 
 
 
