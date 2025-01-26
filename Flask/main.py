@@ -1,10 +1,12 @@
 # Imports
 from flask import Flask, request, jsonify, render_template, redirect
 from dotenv import load_dotenv
-# from AI_Agents.agent import finance_agent, recommend
+from stock_updater import fetch_stock_details
 import stock_updater
 import re
 import threading
+import yfinance as yf
+import datetime
 # from flask import Flask, request, jsonify
 # # from agent import fiance_agent
 # from phi.agent import Agent
@@ -49,20 +51,16 @@ def get_recommendation():
         return jsonify({"error": "Missing 'stock' parameter"}), 400
 
     try:
-        score = recommend(stock_name)
-        if type(score) == str:
-            return "Error"
-        else :
-            return jsonify({"Stock": stock_name, "Score": score})
-        # response = finance_agent.run(f"Analyst recommendation on {stock_name}", stream=False)
-        # print(response.content)
-        # cleaned_String = re.findall(r"\*\s+(.*?):\s(\d+)", response.content)
-        # if cleaned_String:
-        #     recommendation_dict = {label: int(value) for label, value in cleaned_String}
-        #     # print(recommendation_dict)
-        #     return jsonify({"stock": stock_name, 'Stock_Score': recommendation_dict}), 200
-        # else:
-        #     return jsonify({"message": "Error Getting data"}), 500
+        ticker = yf.Ticker(stock_name)
+        price = ticker.history(period="1d")['Close'][-1]
+        description = ticker.info.get("longBusinessSummary", "Description not available")
+        return {
+            "symbol": stock_name,
+            "price": price,
+            "description": description,
+            # "Score": score,
+        }
+
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

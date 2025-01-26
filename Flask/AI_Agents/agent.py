@@ -5,6 +5,7 @@ import re
 from joblib import load
 import asyncio
 import yfinance as yf
+from stock_updater import fetch_stock_details
 # from phi.tools.yfinance import YFinanceTools  # Replace with actual library import
 
 # finance_agent = Agent(
@@ -16,18 +17,11 @@ import yfinance as yf
 #     markdown=True
 # )
 
-model = load('model.pkl')
-
-def recommend(symbol: str):
+async def recommend(symbol: str):
     try:
-        ticker = yf.Ticker(symbol)
-        timePeriod = ticker.history(period='20d')['Close'][-1]
-        print(timePeriod)
-        predictions=model.predict(timePeriod)
-        Score=["Buy" if pred == 1 else "Sell" for pred in predictions]
-        print(Score)
+        # data = []
+        data = await fetch_stock_details(symbol)
+        return  data
 
     except Exception as e:
         print(f"Err: {e}")
-
-recommend('NVDA')

@@ -6,6 +6,7 @@ from datetime import datetime
 import pandas as pd
 from constants import stock_symbols
 
+global stock_data
 stock_data = []
 
 async def fetch_stock_details(symbol: str):
@@ -13,10 +14,6 @@ async def fetch_stock_details(symbol: str):
         ticker = yf.Ticker(symbol)
         price = ticker.history(period="1d")['Close'][-1]
         description = ticker.info.get("longBusinessSummary", "Description not available")
-        news = [
-            f"Breaking news for {symbol}: Sample news article headline 1.",
-            f"Insights for {symbol}: Sample news article headline 2.",
-        ]
         # score = recommend(symbol)
         return {
             "symbol": symbol,
@@ -55,11 +52,9 @@ async def fetch_stock_details(symbol: str):
 
 async def fetch_all_stock_details():
     """Fetch stock details for all symbols asynchronously."""
-    global stock_data
     tasks = [fetch_stock_details(symbol) for symbol in stock_symbols]
     results = await asyncio.gather(*tasks)
     stock_data.extend(results)
-    print(stock_data)
     # print(results)
     #
         # print(
