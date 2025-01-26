@@ -1,0 +1,60 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+main {
+    padding: 40px 20px;
+    background-color: #333;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    background-size:auto;
+}
+
+.feature {
+    background-color: #fafafa;
+    padding: 20px;
+    width: 32%;
+    height: max-content;
+    border-radius: 8px;
+    text-align: justify;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* overflow-y: hidden; */
+
+}
+
+.feature h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: goldenrod;
+}
+
+.feature p {
+    color: white;
+    font-size: 14px;
+}
+
+.feature a {
+    text-decoration: none;
+}

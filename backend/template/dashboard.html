@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestIQ</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="min-h-screen">
+    <div class="flex">
+        <!-- Sidebar -->
+         
+        <aside class="w-64 h-screen bg-white/30 backdrop-blur-[10px] fixed border-r border-gray-200">
+            <div class="p-6">
+                <div class="flex items-center space-x-3 mb-8">
+                    <img src="./assests/logo.png" alt="Logo" class="w-[50px]">
+                    <h1 class="text-xl font-bold gradient-text">InvestIQ</h1>   
+                </div>
+                <nav class="space-y-3">
+                    <a href="dashboard.html" class="flex items-center p-3 hover:bg-indigo-200 text-blue-400 rounded-lg">
+                        <i class="bi bi-grid-1x2-fill mr-3"></i>
+                        Dashboard
+                    </a>
+                    <a href="prediction.html" class="flex items-center p-3 hover:bg-indigo-200 text-blue-400 rounded-lg">
+                        <i class="bi bi-graph-up mr-3"></i>
+                        Market Trends
+                    </a>
+                    <a href="analysis.html" class="flex items-center p-3 hover:bg-indigo-200 text-blue-400 rounded-lg">
+                        <i class="bi bi-graph-up mr-3"></i>
+                        Statistics
+                    </a>
+                    <a href="setting.html" class="flex items-center p-3 hover:bg-indigo-200 text-blue-400 rounded-lg">
+                        <i class="bi bi-graph-up mr-3"></i>
+                        Settings
+                    </a>
+                </nav>
+            </div>
+        </aside>
+
+        <main class="flex-1 ml-64 p-8">
+            <div class="max-w-7xl mx-auto">
+                <header class="flex, items-center mb-8">
+                    <div>
+                        Profile
+                    </div>
+                </header>
+
+                <div class="flex h-[90vh] mb-4 w-100rem">
+                    <div class="glass-effect p-6 rounded-xl h-full w-full">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Voting Progress</h3>
+                        <canvas id="votingProgress" height="h-full" width="w-full" ></canvas>
+                    </div>
+                </div>
+
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+                    <div class="glass-effect p-6 rounded-xl">
+                        Holdings
+                    </div>
+
+                    <div class="glass-effect p-6 rounded-xl">
+                        Assests
+                    </div>
+
+                    <div class="glass-effect p-6 rounded-xl">
+                        Top Sells
+                    </div>
+
+                    <div class="glass-effect p-6 rounded-xl">
+                        Bottom Sells
+                    </div>
+                </div>
+
+                <div class="glass-effect p-6 rounded-xl">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h3>
+                    <div class="space-y-4" id="activityFeed">
+                        Timeline
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

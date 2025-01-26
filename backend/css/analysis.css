@@ -1,0 +1,75 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container setup */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Graph section */
+.graph {
+    background-color: #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.graph h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Stock information section */
+.stock-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stock-info .stock-name,
+.stock-info .stock-price,
+.stock-info .stock-description {
+    background-color: #fafafa;
+    padding: 20px;
+    width: 30%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stock-info h3 {
+    color: #333;
+}
+
+/* Bottom information section */
+.bottom-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bottom-info .stock-news,
+.bottom-info .recommendations {
+    background-color: #fafafa;
+    padding: 20px;
+    width: 48%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.bottom-info h3 {
+    color: #333;
+}
